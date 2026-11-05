@@ -12,6 +12,12 @@ def show_tasks():
         status = "✓" if t["done"] else " "
         print(f"{i}. [{status}] {t['title']}")
 
+def complete_task(index):
+    tasks[index - 1]["done"] = True
+
+def delete_task(index):
+    tasks.pop(index - 1)
+
 def main():
     print("Task Manager")
     add_task("Learn Git")
