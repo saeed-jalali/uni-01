@@ -19,9 +19,19 @@ def delete_task(index):
     tasks.pop(index - 1)
 
 def main():
-    print("Task Manager")
-    add_task("Learn Git")
-    show_tasks()
+    while True:
+        print("\n1. Add  2. Show  3. Done  4. Delete  5. Exit")
+        choice = input("Choose: ")
+        if choice == "1":
+            add_task(input("Title: "))
+        elif choice == "2":
+            show_tasks()
+        elif choice == "3":
+            complete_task(int(input("Number: ")))
+        elif choice == "4":
+            delete_task(int(input("Number: ")))
+        elif choice == "5":
+            break
 
 if __name__ == "__main__":
     main()
